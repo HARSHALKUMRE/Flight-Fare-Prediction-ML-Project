@@ -10,4 +10,6 @@ dill
 flask
 flask_cors
 apache-airflow
+openpyxl
+pyarrow
 -e .
