@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flight Fare Preice Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <a href="https://github.com/HARSHALKUMRE/Flight-Fare-Prediction-ML-Project" class="top-left-link" target="_blank">GitHub Repository Link</a>
+    <h1>Flight Fare Price Prediction</h1>
+    <div class="form-box">
+    <form action="{{url_for('predict_datapoint')}}" method="POST">
+        <div class="form-group">
+            <label for="Airline">Airline:</label>
+            <select id="Airline" name="Airline">
+            <option value="IndiGo">IndiGo</option>
+            <option value="Air India">Air India</option>
+            <option value="Jet Airways">Jet Airways</option>
+            <option value="SpiceJet">SpiceJet</option>
+            <option value="GoAir">GoAir</option>
+            <option value="Vistara">Vistara</option>
+            <option value="Air Aisa">Air Asia</option>
+            <option value="Multiple carriers">Multiple carriers</option>
+            <option value="Vistara Premium economy">Vistara Premium economy</option>
+            <option value="Jet Airways Business">Jet Airways Business</option>
+            <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="Source">Source:</label>
+            <select id="Source" name="Source">
+            <option value="Mumbai">Mumbai</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+            </select>
+        </div>
+
+        <div class="form-group">  
+            <label for="Destination">Destination:</label>
+            <select id="Destination" name="Destination">
+            <option value="New Delhi">New Delhi</option> 
+            <option value="Banglore">Banglore</option>
+            <option value="Cochin">Cochin</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Hyderabad">Hyderabad</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="Total_Stops">Total_Stops</label>
+          <select id="Total_Stops" name="Total_Stops">
+            <option value="0">non-stop</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+
+      
+        <div class="form-group">
+            <label for="Journey_day">Journey_day:</label>
+            <input type="text" id="Journey_day" name="Journey_day" placeholder="Please mention the Journey_day (int)">
+        </div>
+      
+        <div class="form-group">
+          <label for="Journey_month">Journey_month:</label>
+          <input type="text" id="Journey_month" name="Journey_month" placeholder="Please mention the Journey_month (int)">
+        </div>
+
+        <div class="form-group">
+          <label for="Journey_year">Journey_year:</label>
+          <input type="text" id="Journey_year" name="Journey_year" placeholder="Please mention the Journey_year (int)">
+        </div>
+
+        <div class="form-group">
+          <label for="hours">hours:</label>
+          <input type="text" id="hours" name="hours" placeholder="Please mention the hours (int)">
+      </div>
+
+        
+      <div class="form-group">
+        <label for="minutes">minutes:</label>
+        <input type="text" id="minutes" name="minutes" placeholder="Please mention the minutes (int)">
+      </div>
+       
+      <div class="form-group">
+        <label for="Arrival_hour">Arrival_hour:</label>
+        <input type="text" id="Arrival_hour" name="Arrival_hour" placeholder="Please mention the Arrival_hour (int)">
+      </div>
+       
+      <div class="form-group">
+        <label for="Arrival_min">Arrival_min</label>
+        <input type="text" id="Arrival_min" name="Arrival_min" placeholder="Please mention the Arrival_min (int)">
+      </div>
+      
+      <div class="form-group">
+        <label for="Duration_hours">Duration_hours:</label>
+        <input type="text" id="Duration_hours" name="Duration_hours" placeholder="Please mention the Duration_hours (int)">
+      </div>
+
+      <div class="form-group">
+        <label for="Duration_mins">Duration_mins:</label>
+        <input type="text" id="Duration_mins" name="Duration_mins" placeholder="Please mention the Duration_mins (int)">
+      </div>
+
+    <div style="clear:both;"></div>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
+    <h2>
+      Predicted Flight Fare Price is : {{ results }}₹
+    </h2>
+  </body>
+</html>
